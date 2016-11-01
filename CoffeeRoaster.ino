@@ -7,6 +7,7 @@ void setup() {
   // Set up pin outputs for relays
   pinMode(RELAY1, OUTPUT);
   pinMode(RELAY2, OUTPUT);
+
   // Default relay to off
   digitalWrite(RELAY1, HIGH);
   digitalWrite(RELAY2, HIGH);
@@ -22,7 +23,6 @@ void loop() {
     // LOW turns coils ON
     digitalWrite(RELAY1, LOW);
     digitalWrite(RELAY2, LOW);
-
 }
 
 int getTemp() {
