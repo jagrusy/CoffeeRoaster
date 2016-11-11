@@ -3,7 +3,6 @@ const int sensorPin = A0;
 const float maxtemp = 450.0;
 const float mintemp = 420.0;
 double TF;                  // Temp read from thermocouple
-//int j = 5;                  // Number of values for running average
 double runAvg[5];           // Running average array for temperature
 int k = 0;                  // Current value of running avg array being overwritten
 #define relay1 2
@@ -54,7 +53,7 @@ void loop() {
  
   TF = getTemp();
   runAvg[k] = TF;                   // Put current temp in running average
-  TF = 
+  TF = getAvg(runAvg);              // Update temp from 5 point running average
   //print temperature in Celsius
   Serial.println(TF);
   
